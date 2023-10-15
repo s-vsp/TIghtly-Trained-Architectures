@@ -1,0 +1,2 @@
+1. Stanford Cars - (https://paperswithcode.com/dataset/stanford-cars) - 16,185 images - 196 classes - 360 x 240
+2. Caltech-101 - (https://paperswithcode.com/dataset/caltech-101) - 9,146 images - 102 classes - ~ 200-300 x 200-300
