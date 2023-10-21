@@ -1,2 +1,6 @@
 1. Stanford Cars - (https://paperswithcode.com/dataset/stanford-cars) - 16,185 images - 196 classes - 360 x 240
 2. Caltech-101 - (https://paperswithcode.com/dataset/caltech-101) - 9,146 images - 102 classes - ~ 200-300 x 200-300
+3. Stanford cars resized - (https://www.kaggle.com/datasets/jutrera/stanford-car-dataset-images-in-224x224) - ~16k images - 196 classes - 224 x 224
+4. House Rooms & Streets - (https://www.kaggle.com/datasets/mikhailma/house-rooms-streets-image-dataset) - ~25k images - 13 classes - 224 x 224
+5. MUSHROOMS Classified - (https://www.kaggle.com/datasets/vegameta23/mushrooms-specified) - ~37k - 1009 classes - 224 x 224
+6. Flower Image Dataset - (https://www.kaggle.com/datasets/phucthaiv02/flower-image-dataset) - ~45k - 104 classes - 224 x 224
