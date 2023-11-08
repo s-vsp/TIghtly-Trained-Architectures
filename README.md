@@ -27,7 +27,7 @@ Methodologies overview, used datasets and neural networks architectures.
 - Training Details
     - Trainable parameters = 1,050,757
     - Batch Size = 64
-    - Epochs = 50
+    - Epochs = 30
     - Initial Learning Rate = 1e-2
     - Momentum = 0.9
     - Weight Decay = 5e-4
@@ -38,7 +38,7 @@ Methodologies overview, used datasets and neural networks architectures.
 - **Training Results**
 ![VGG16-SmallNORB-Train](./images/vgg16-smallnorb.png)
 
-- **Test Accuracy = 68.35%**
+- **Test Accuracy = 90.81%**
 
 ### Improved ResNet50
 ### SwinTransformer
