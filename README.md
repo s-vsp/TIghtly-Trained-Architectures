@@ -40,8 +40,66 @@ Methodologies overview, used datasets and neural networks architectures.
 - **Test Accuracy = 91.23%**
 
 ### Improved ResNet50
+- Augmentations
+    - Train Augmentations
+        - RandomResizedCrop(size=(224,224), scale=(0.8, 1.0))
+        - RandomRotation(degrees=30)
+        - RandomHorizontalFlip()
+        - ToTensor()
+        - Normalize(mean=0.485, std=0.229)
+    - Validation Augmentations:
+        - Resize(size=(224, 224))
+        - ToTensor()
+        - Normalize(mean=0.485, std=0.229)
+    - Test Augmentations:
+        - Resize(size=(224, 224))
+        - ToTensor()
+        - Normalize(mean=0.485, std=0.229)
+
+- Training Details
+    - Total parameters: 24,027,589
+    - Trainable parameters: 528,965
+    - Batch Size = 16
+    - Epochs = 100 (61 completed)
+    - Initial Learning Rate = 5e-3
+    - Momentum = 0.9
+    - Weight Decay = 1e-2
+    - Optimizer: SGD
+    - Learning Rate Scheduler: CosineAnnealingLR
+    - Loss: Negative Log-Likelihood
+
+- **Test Accuracy = 89.1975%**
 
 ### SwinTransformer
+- Augmentations
+    - Train Augmentations
+        - Resize(size=(224, 224))
+        - RandAugment(num_ops=2, magnitude=9)
+        - ToTensor()
+        - Normalize(mean=0.485, std=0.229)
+        - RandomErasing(p=0.25)
+        - CutMix / MixUp
+    - Validation Augmentations:
+        - Resize(size=(224, 224))
+        - ToTensor()
+        - Normalize(mean=0.485, std=0.229)
+    - Test Augmentations:
+        - Resize(size=(224, 224))
+        - ToTensor()
+        - Normalize(mean=0.485, std=0.229)
+
+- Training Details
+    - Total parameters: 87,002,813
+    - Trainable parameters: 265,861
+    - Batch Size = 16
+    - Epochs = 80 (7 completed)
+    - Initial Learning Rate = 5e-3
+    - Weight Decay = 5e-2
+    - Optimizer: SGD
+    - Learning Rate Scheduler: CosineAnnealingLR
+    - Loss: Negative Log-Likelihood
+
+- **Test Accuracy = 91.7407%**
 
 ### ConvNeXt
 - Augmentations
