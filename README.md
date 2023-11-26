@@ -166,6 +166,35 @@ Methodologies overview, used datasets and neural networks architectures.
 ## StreetsAndHouses
 
 ### VGG16
+- Augmentations
+    - Train Augmentations:
+        - RandomResizedCrop(size=(224,224), scale=(0.8, 1.0)),
+        - RandomRotation(degrees=30),
+        - RandomHorizontalFlip(),
+        - ToTensor(),
+        - Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
+    - Validation Augmentations:
+        - Resize(size=(224, 224))
+        - ToTensor(),
+        - Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
+    - Test Augmentations:
+        - Resize(size=(224, 224))
+        - ToTensor(),
+        - Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
+
+- Training Details
+    - Total parameters: 135,312,717
+    - Trainable parameters: 1,052,173
+    - Batch Size: 16
+    - Epochs: 35
+    - Initital Learning Rate: 1e-2
+    - Momentum: 0.9
+    - Weight Decay: 5e-4
+    - Optimizer: SGD
+    - Learning Rate Scheduler: ReduceLROnPlateau
+    - Loss: Negative Log-Likelihood
+
+- **Test Accuracy = 51.66%**
 
 ### Improved ResNet50
 - Augmentations
@@ -230,5 +259,63 @@ Methodologies overview, used datasets and neural networks architectures.
 - **Test Accuracy = 62.6872%**
 
 ### ConvNeXt
+- Augmentations
+    - Train Augmentations:
+        - Resize(size=(224, 224)),
+        - RandAugment(num_ops=2, magnitude=9),
+        - ToTensor(),
+        - Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
+        - RandomErasing(p=0.25)
+        - CutMix / MixUp
+    - Validation Augmentations:
+        - Resize(size=(224, 224))
+        - ToTensor(),
+        - Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
+    - Test Augmentations:
+        - Resize(size=(224, 224))
+        - ToTensor(),
+        - Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
+
+- Training Details
+    - Total parameters: 87,832,205
+    - Trainable parameters: 265,741
+    - Batch Size: 16
+    - Epochs: 30
+    - Initital Learning Rate: 5e-5
+    - Weight Decay: 1e-8
+    - Optimizer: AdamW
+    - Learning Rate Scheduler: CosineAnnealingLR
+    - Loss: Cross Entropy (label-smoothing=0.1)
+
+- **Test Accuracy = 69.46%**
 
 ### ConvNeXt V2
+- Augmentations
+    - Train Augmentations
+        - Resize(size=(224, 224))
+        - RandAugment(num_ops=2, magnitude=9)
+        - ToTensor()
+        - Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
+        - RandomErasing(p=0.25)
+        - CutMix / MixUp(p=0.8)
+    - Validation Augmentations:
+        - Resize(size=(224, 224))
+        - ToTensor()
+        - Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
+    - Test Augmentations:
+        - Resize(size=(224, 224))
+        - ToTensor()
+        - Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
+
+- Training Details
+    - Total parameters: 87,958,541
+    - Trainable parameters: 265,741
+    - Batch Size = 16
+    - Epochs = 50
+    - Initial Learning Rate = 6.25e-4
+    - Weight Decay = 0.05
+    - Optimizer: AdamW
+    - Learning Rate Scheduler: CosineAnnealingLR
+    - Loss: Cross Entropy (label-smoothing=0.1)
+
+- **Test Accuracy = 70.22 %**
